@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "639821690383",
+    "project_id": "chittoo-flutter-9dcc8",
+    "storage_bucket": "chittoo-flutter-9dcc8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639821690383:android:d855fdabd7462c7498d57a",
+        "android_client_info": {
+          "package_name": "com.example.chittoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639821690383-rr9mu6b11mln0a6hooqm1u7vqul6amjs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chittoo",
+            "certificate_hash": "0b5186a5c059ce1e61465f665c2a411f28efb3a5"
+          }
+        },
+        {
+          "client_id": "639821690383-l6p53kk69tjhbg586ive4brtd3lao3gn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDXWa779-aX_fs9Nt5mJjbdX4dsNJZBf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639821690383-l6p53kk69tjhbg586ive4brtd3lao3gn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
