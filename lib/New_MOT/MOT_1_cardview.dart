@@ -34,6 +34,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                     fontSize: 20,
                     fontWeight: FontWeight.w500),
               ),
+              //asdfghjkl
               const Text(
                 "हर दिन एक नए विषय पे चैट करें।",
                 style: TextStyle(
