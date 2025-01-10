@@ -82,7 +82,7 @@ class _Vocabulary_banner extends State<Vocabulary_banner> {
             ),
 
             Align(alignment: Alignment.bottomLeft, child: SvgPicture.asset(
-              "Images/Banners_img/vocabluar_banner_icon.svg",
+              "assets/images/Banners_img/vocabluar_banner_icon.svg",
               fit: BoxFit.fill,
               width: 100,
               height: 120,

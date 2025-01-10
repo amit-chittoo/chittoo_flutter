@@ -23,7 +23,7 @@ class _Todays_Quiz_ListViewState extends State<Todays_Quiz_ListView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Image(
-                image: AssetImage("Images/Rectangle 2.2.png"),
+                image: AssetImage("assets/images/Rectangle 2.2.png"),
                 height: 110,
                 fit: BoxFit.contain,
               ),

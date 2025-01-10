@@ -23,7 +23,7 @@ class _Doubt_CardViewState extends State<Doubt_CardView> {
         ),
         const Center(
           child: Image(
-            image: AssetImage("Images/Worried-amico 1.png"),
+            image: AssetImage("assets/images/Worried-amico 1.png"),
             fit: BoxFit.fill,
             width: 200,
             height: 200,

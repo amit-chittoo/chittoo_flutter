@@ -89,7 +89,7 @@ class _Leader_boardState extends State<Leader_board> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Image(
-                                  image: AssetImage("Images/User.png"),
+                                  image: AssetImage("assets/images/User.png"),
                                   width: 70,
                                 ),
                                 Text(
@@ -115,12 +115,12 @@ class _Leader_boardState extends State<Leader_board> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Image(
-                                    image: AssetImage("Images/pro crown.png")),
+                                    image: AssetImage("assets/images/pro crown.png")),
                                 SizedBox(
                                   height: 10,
                                 ),
                                 Image(
-                                  image: AssetImage("Images/User.png"),
+                                  image: AssetImage("assets/images/User.png"),
                                   width: 100,
                                 ),
                                 Text(
@@ -146,7 +146,7 @@ class _Leader_boardState extends State<Leader_board> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Image(
-                                  image: AssetImage("Images/User.png"),
+                                  image: AssetImage("assets/images/User.png"),
                                   width: 70,
                                 ),
                                 Text(

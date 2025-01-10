@@ -59,7 +59,7 @@ class _Shuru_Home_pageState extends State<Shuru_Home_page> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(50))),
                   child: Image(
-                    image: AssetImage("Images/intro2.png"),
+                    image: AssetImage("assets/images/intro2.png"),
                     fit: BoxFit.contain,
                   ),
                 ),

@@ -23,7 +23,7 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
   Color _btn_color = const Color(0xFFF57952);
   final _learn_new_controller = PageController();
   List<stories_model> storyModel = [];
-  List<learnDailyModel> learmodel = [];
+  // List<learnDailyModel> learmodel = [];
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
       storyModel = getStories();
     }
 
-    learmodel = getlearndata();
+    // learmodel = getlearndata();
   }
 
   @override
@@ -93,7 +93,7 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
                                             Expanded(
                                                 child: Image(
                                                     image: AssetImage(
-                                                        "Images/pro crown.png")))
+                                                        "assets/images/pro crown.png")))
                                           ],
                                         )),
                                   ),
@@ -111,7 +111,7 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
                                         child: const Image(
                                           fit: BoxFit.contain,
                                           image: AssetImage(
-                                            "Images/notification.png",
+                                            "assets/images/notification.png",
                                           ),
                                           color: Colors.grey,
                                         ),
@@ -146,7 +146,7 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
                               const Row(
                                 children: [
                                   Image(
-                                    image: AssetImage("Images/idea.png"),
+                                    image: AssetImage("assets/images/idea.png"),
                                     fit: BoxFit.fill,
                                     width: 25,
                                     height: 35,
@@ -163,20 +163,21 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
                                   )
                                 ],
                               ),
-                              Container(
-                                margin: const EdgeInsets.only(top: 10),
-                                width: MediaQuery.of(context).size.width * .900,
-                                height: 400,
-                                child: PageView.builder(
-                                  controller: _learn_new_controller,
-                                  itemCount: 2,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Learn_PageViewer(
-                                        index: index, learnmodel: learmodel);
-                                  },
-                                ),
-                              ),
+                              //so here the issue was that it will getting learn model data from db and i have stopped that and thats why it was having issue
+                              // Container(
+                              //   margin: const EdgeInsets.only(top: 10),
+                              //   width: MediaQuery.of(context).size.width * .900,
+                              //   height: 400,
+                              //   child: PageView.builder(
+                              //     controller: _learn_new_controller,
+                              //     itemCount: 2,
+                              //     itemBuilder:
+                              //         (BuildContext context, int index) {
+                              //       return Learn_PageViewer(
+                              //           index: index, learnmodel: learmodel);
+                              //     },
+                              //   ),
+                              // ),
                               Center(
                                 child: SmoothPageIndicator(
                                   controller: _learn_new_controller,
@@ -256,7 +257,7 @@ class _Course_MainPage_ViewState extends State<Games_Main_page> {
                                 ],
                               ),
                               const Image(
-                                image: AssetImage("Images/Group.png"),
+                                image: AssetImage("assets/images/Group.png"),
                                 fit: BoxFit.fill,
                                 width: 100,
                               ),

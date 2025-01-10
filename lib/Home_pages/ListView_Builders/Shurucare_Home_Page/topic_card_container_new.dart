@@ -82,7 +82,7 @@ class _Topic_card_containerState extends State<Topic_card_container> {
                           child: Row(
                             children: [
                               SvgPicture.asset(
-                                  "Images/icons/exerciese_topic.svg"),
+                                  "assets/images/icons/exerciese_topic.svg"),
                               const SizedBox(
                                 width: 5,
                               ),

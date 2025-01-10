@@ -91,7 +91,7 @@ class _Intro_page_layoutState extends State<Intro_page_layout> {
               Container(
                 margin: const EdgeInsets.only(top: 70),
                 child: Image.asset(
-                  "Images/${_image_list[_page_no]}",
+                  "assets/images/${_image_list[_page_no]}",
                   width: MediaQuery.of(context).size.width - 30,
                   fit: BoxFit.fill,
                   height: 200,

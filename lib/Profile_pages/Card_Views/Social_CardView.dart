@@ -11,12 +11,12 @@ class _Social_CardViewState extends State<Social_CardView> {
   @override
   Widget build(BuildContext context) {
     List<String> images = [
-      "Images/facebook.png",
-      "Images/insta.png",
-      "Images/youtuber.png",
-      "Images/linkedin.png",
-      "Images/telegram.png",
-      "Images/whatsapp.png"
+      "assets/images/facebook.png",
+      "assets/images//insta.png",
+      "assets/images//youtuber.png",
+      "assets/images//linkedin.png",
+      "assets/images//telegram.png",
+      "assets/images//whatsapp.png"
     ];
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,

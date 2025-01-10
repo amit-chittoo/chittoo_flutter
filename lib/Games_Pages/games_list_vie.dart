@@ -41,7 +41,7 @@ class _Games_listViewState extends State<Games_listView> {
                       border: Border.all(color: Colors.orangeAccent),
                       color: Colors.transparent),
                   child: Image(
-                    image: AssetImage("Images/gift_selet.jpg"),
+                    image: AssetImage("assets/images/gift_selet.jpg"),
                     fit: BoxFit.fill,
                   ),
                 ),

@@ -61,7 +61,7 @@ class _Profile_Main_PageState extends State<Profile_Main_Page> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Image(image: AssetImage("Images/User.png")),
+                  const Image(image: AssetImage("assets/images/User.png")),
                   const Text(
                     "Praveen B",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -125,7 +125,7 @@ class _Profile_Main_PageState extends State<Profile_Main_Page> {
                           backgroundColor: Colors.grey,
                         ),
                         Image(
-                          image: AssetImage("Images/mdi_fire.png"),
+                          image: AssetImage("assets/images/mdi_fire.png"),
                           width: 33,
                         )
                       ]),

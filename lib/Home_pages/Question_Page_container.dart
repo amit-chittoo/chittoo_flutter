@@ -144,7 +144,7 @@ class _Question_Page_containerState extends State<Question_Page_container> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image(
-                          image: AssetImage("Images/Mask Group.png"),
+                          image: AssetImage("assets/images/Mask Group.png"),
                           fit: BoxFit.fill,width: 200,
                         ),
                         SizedBox(height: 10,),

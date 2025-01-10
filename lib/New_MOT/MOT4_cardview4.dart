@@ -88,7 +88,7 @@ class _MOT4_cardViewState extends State<MOT4_cardView> {
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Color.fromARGB(255, 252, 244, 227)),
                     child:  SvgPicture.asset(
-                      "Images/icons/stargorup.svg",
+                      "assets/images/icons/stargorup.svg",
                       width: 40,
                       height: 40,
                     ),),

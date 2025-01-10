@@ -77,7 +77,7 @@ class _Learn_pageState extends State<Learn_page> {
                                             child: Image(
                                                 image:
                                                 AssetImage(
-                                                    "Images/pro crown.png")))
+                                                    "assets/images/pro crown.png")))
                                       ],
                                     )),
                               ),
@@ -95,7 +95,7 @@ class _Learn_pageState extends State<Learn_page> {
                                     child: const Image(
                                       fit: BoxFit.contain,
                                       image: AssetImage(
-                                        "Images/notification.png",
+                                        "assets/images/notification.png",
                                       ),
                                       color: Colors.grey,
                                     ),

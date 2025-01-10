@@ -30,7 +30,7 @@ class _Daily_view_pageState extends State<Daily_view_page> {
                 Row(
                   children: [
                     Image(
-                      image: AssetImage("Images/pencil.png"),
+                      image: AssetImage("assets/images/pencil.png"),
                       width: 50,
                       height: 60,
                       fit: BoxFit.fill,
@@ -42,7 +42,7 @@ class _Daily_view_pageState extends State<Daily_view_page> {
               ],
             ),
             Image(
-              image: AssetImage("Images/youtubelogo.png"),
+              image: AssetImage("assets/images/youtubelogo.png"),
               width: 30,
               height: 40,
               fit: BoxFit.contain,

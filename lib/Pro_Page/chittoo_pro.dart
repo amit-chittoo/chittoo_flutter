@@ -50,7 +50,7 @@ class _Chittoo_ProState extends State<Chittoo_Pro> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image(
-                              image: AssetImage("Images/pro crown.png"),
+                              image: AssetImage("assets/images/pro crown.png"),
                               color: Color(0xFFF57952),
                               width: 40,
                               height: 40,

@@ -77,7 +77,7 @@ class _Jam_master_bannerState extends State<Jam_master_banner> {
             Align(
               alignment: Alignment.bottomLeft,
               child: SvgPicture.asset(
-                "Images/Banners_img/jam_master_icon.svg",
+                "assets/images/Banners_img/jam_master_icon.svg",
                 fit: BoxFit.fill,
                 width: 100,
                 height: 110,

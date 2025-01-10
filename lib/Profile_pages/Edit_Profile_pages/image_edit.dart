@@ -15,7 +15,7 @@ class Image_Edit extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage("Images/User.png"),
+                backgroundImage: AssetImage("assets/images/User.png"),
               ),
               Positioned(
                 top: 75,

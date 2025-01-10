@@ -15,9 +15,9 @@ class _Extra_List_ViewState extends State<Extra_List_View> {
   @override
   Widget build(BuildContext context) {
     List<String> _image_list = [
-      "Images/call.png",
-      "Images/certificates.png",
-      "Images/leaderborad.png"
+      "assets/images/call.png",
+      "assets/images/certificates.png",
+      "assets/images/leaderborad.png"
     ];
     List<String> _names = ["1 on 1 Call", "Certificates", "Leaderboard"];
     return GestureDetector(

@@ -60,7 +60,7 @@ class _Contest_PageState extends State<Contest_Page> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CircleAvatar(
-                              backgroundImage: AssetImage("Images/chittoo.png"),
+                              backgroundImage: AssetImage("assets/images/chittoo.png"),
                               // fit: BoxFit.contain,
                               // width: 50,
                               // height: 50,
@@ -96,7 +96,7 @@ class _Contest_PageState extends State<Contest_Page> {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image.asset(
-                            "Images/contest_image.png",
+                            "assets/images/contest_image.png",
                             width: MediaQuery.of(context).size.width * 0.8,
                             fit: BoxFit.fill,
                             height: 300,
@@ -190,7 +190,7 @@ class _Contest_PageState extends State<Contest_Page> {
                         alignment: Alignment.topLeft,
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          backgroundImage: AssetImage("Images/chittoo.png"),
+                          backgroundImage: AssetImage("assets/images/chittoo.png"),
                         ),
                       ),
                     ],

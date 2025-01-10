@@ -29,7 +29,7 @@ class LeaderBoard_CardView extends StatelessWidget {
                   ),
                 ),
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("Images/User.png"),
+                  backgroundImage: AssetImage("assets/images/User.png"),
                 ),
               ),
               SizedBox(

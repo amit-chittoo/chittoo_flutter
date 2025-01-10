@@ -27,9 +27,9 @@ class _Splash_ScreensState extends State<Splash_Screens> {
     "A.I generated custom lessons as per\nyour need and requirement.\nStart speaking with confidence !"
   ];
   final List<String> _image_url = [
-    "Images/happy_groupmates_meet_after_holidays__shake_hands__agree_to_work_together_as_team__stand_in_profile__lovely_woman_with_headphones_meets_friend__unshaven_young_man_holds_notepad_talks_with_female.png",
-    "Images/intro2.png",
-    "Images/intro3.png"
+    "assets/images/happy_groupmates_meet.png",
+    "assets/images/intro2.png",
+    "assets/images/intro3.png"
   ];
   Color _btn_color = const Color(0xFFF57952);
   int index=0;

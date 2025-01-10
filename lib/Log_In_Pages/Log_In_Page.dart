@@ -1,4 +1,6 @@
 import 'dart:developer';
+import 'package:chittoo/Games_Pages/Games_Main_page.dart';
+import 'package:chittoo/Profile_pages/Profile_Main_Page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -39,7 +41,7 @@ class _Log_InState extends State<Log_In> {
                   child: Container(
                     margin: const EdgeInsets.only(top: 28),
                     child: const Image(
-                      image: AssetImage("Images/chittoo_logo.png"),
+                      image: AssetImage("assets/images/chittoo_logo.png"),
                       width: 85,
                       fit: BoxFit.fill,
                     ),
@@ -172,7 +174,7 @@ class _Log_InState extends State<Log_In> {
                       // final provider =
                       //     Provider.of<Googlesignin>(context, listen: false);
                       // provider.
-                      
+
                       signInWithGoogle(context);
                       // Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_page()));
                     },
@@ -185,7 +187,7 @@ class _Log_InState extends State<Log_In> {
                           shadowColor: Colors.transparent,
                           elevation: 20,
                           surfaceTintColor: Colors.transparent,
-                          child: Image.asset("Images/google_icon.png")),
+                          child: Image.asset("assets/images/google_icon.png")),
                     ),
                   ),
                 ),
@@ -262,7 +264,7 @@ class _Log_InState extends State<Log_In> {
                           //       fontSize: 16.0,
                           //     );
                           //   }
-                      //    }
+                          //    }
                         },
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -291,39 +293,35 @@ class _Log_InState extends State<Log_In> {
   }
 }
 
-  Future<void> signInWithGoogle(context) async {
-    try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+Future<void> signInWithGoogle(context) async {
+  try {
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      if (googleUser == null) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Google sign-in canceled.")),
-          
-        );
-        return;
-      }
-
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
-
-      final OAuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-        
-      );
-
-      await FirebaseAuth.instance.signInWithCredential(credential);
-
+    if (googleUser == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Google Sign-In Successful!")),
+        const SnackBar(content: Text("Google sign-in canceled.")),
       );
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const Home_page()),
-      );
-    } catch (e) {
-      log("Google Sign-In Error: $e");
-      
-
+      return;
     }
+
+    final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+
+    final OAuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    await FirebaseAuth.instance.signInWithCredential(credential);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Google Sign-In Successful!")),
+    );
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const Home_page()),
+    );
+  } catch (e) {
+    log("Google Sign-In Error: $e");
   }
+}

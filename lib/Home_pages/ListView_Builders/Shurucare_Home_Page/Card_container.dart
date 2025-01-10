@@ -34,7 +34,7 @@ class _Card_ContainerState extends State<Card_Container> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image(
-                      image: AssetImage("Images/chat_icon.png"),
+                      image: AssetImage("assets/images/chat_icon.png"),
                       fit: BoxFit.fill,
                       width: 50,
                       height: 50,
@@ -87,7 +87,7 @@ class _Card_ContainerState extends State<Card_Container> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Image(
-                                  image: AssetImage("Images/trophy.png"),
+                                  image: AssetImage("assets/images/trophy.png"),
                                   width: 15,
                                   height: 15,
                                   fit: BoxFit.fill,
@@ -110,7 +110,7 @@ class _Card_ContainerState extends State<Card_Container> {
                               children: [
                                 Text("0"),
                                 Image(
-                                  image: AssetImage("Images/conis.png"),
+                                  image: AssetImage("assets/images/conis.png"),
                                   width: 15,
                                   height: 15,
                                   fit: BoxFit.fill,
@@ -127,7 +127,7 @@ class _Card_ContainerState extends State<Card_Container> {
             Align(
                 alignment: Alignment.centerRight,
                 child: Image(
-                  image: AssetImage("Images/play.png"),
+                  image: AssetImage("assets/images/play.png"),
                   width: 30,
                   fit: BoxFit.contain,
                 ))

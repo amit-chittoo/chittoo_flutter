@@ -43,7 +43,7 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
                   ),
                 ],
               ),
-              Image.asset("Images/icons/grammar_icon.png"),
+              Image.asset("assets/images/icons/grammar_icon.png"),
             ],
           ),
           SizedBox(
@@ -82,19 +82,19 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
                   children: [
                     Visibility(
                       child: SvgPicture.asset(
-                        "Images/icons/speaker.svg",
+                        "assets/images/icons/speaker.svg",
                         width: 20,
                         height: 20,
                       ),
                       visible: false,
                     ),
                     SvgPicture.asset(
-                      "Images/icons/copy_clip.svg",
+                      "assets/images/icons/copy_clip.svg",
                       width: 20,
                       height: 20,
                     ),
                     SvgPicture.asset(
-                      "Images/icons/delete_bin.svg",
+                      "assets/images/icons/delete_bin.svg",
                       width: 20,
                       height: 20,
                     ),
@@ -138,17 +138,17 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SvgPicture.asset(
-                      "Images/icons/speaker.svg",
+                      "assets/images/icons/speaker.svg",
                       width: 20,
                       height: 20,
                     ),
                     SvgPicture.asset(
-                      "Images/icons/copy_clip.svg",
+                      "assets/images/icons/copy_clip.svg",
                       width: 20,
                       height: 20,
                     ),
                     SvgPicture.asset(
-                      "Images/icons/delete_bin.svg",
+                      "assets/images/icons/delete_bin.svg",
                       width: 20,
                       height: 20,
                     ),

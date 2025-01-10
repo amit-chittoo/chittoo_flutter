@@ -23,16 +23,16 @@ class _Home_pageState extends State<Home_page> {
     Icons.person
   ];
   List<String> selected_ListOfIcons = [
-    "Images/home_selected.jpg",
-    "Images/learn_select.jpg",
-    "Images/gift_selet.jpg",
-    "Images/profile_select.jpg"
+    "assets/images/home_selected.jpg",
+    "assets/images/learn_select.jpg",
+    "assets/images/gift_selet.jpg",
+    "assets/images/profile_select.jpg"
   ];
   List<String> unselected_ListOfIcons = [
-    "Images/home_unselected.jpg",
-    "Images/learn_unselect.jpg",
-    "Images/gift_unselet.jpg",
-    "Images/profile_unselect.jpg"
+    "assets/images/home_unselected.jpg",
+    "assets/images/learn_unselect.jpg",
+    "assets/images/gift_unselet.jpg",
+    "assets/images/profile_unselect.jpg"
   ];
   Color _btn_color = const Color(0xFFF57952);
 

@@ -15,10 +15,10 @@ class _Levels_List_View_containerState
   @override
   Widget build(BuildContext context) {
     List<String> Image_list_address = [
-      "Images/conis.png",
-      "Images/trophy.png",
-      "Images/shield.png",
-      "Images/level.png"
+      "assets/images/conis.png",
+      "assets/images/trophy.png",
+      "assets/images/shield.png",
+      "assets/images/level.png"
     ];
     List<String> _names = ["Coins", "Trophy", "Shield", "Level"];
     return Card(

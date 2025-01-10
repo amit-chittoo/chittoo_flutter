@@ -1,3 +1,4 @@
+import 'package:chittoo/New_MOT/speechTotext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -66,7 +67,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset(
-                    "Images/chittoo_logo.png",
+                    "assets/images/chittoo_logo.png",
                     fit: BoxFit.fill,
                     width: 30,
                     height: 30,
@@ -80,7 +81,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                         alignment: Alignment.center,
                         transform: Matrix4.rotationX(3),
                         child: SvgPicture.asset(
-                          "Images/Shape.svg",
+                          "assets/images/Shape.svg",
                           width: 30,
                           height: 30,
                           fit: BoxFit.contain,
@@ -103,7 +104,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                             transform: Matrix4.rotationX(3),
                             child: SvgPicture.asset(
                               fit: BoxFit.fill,
-                              "Images/Main In.svg",
+                              "assets/images/Main In.svg",
                             )),
                         Container(
                           margin: const EdgeInsets.all(5),
@@ -139,7 +140,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                           transform: Matrix4.identity()..scale(-1.0, 1.0),
                           child: SvgPicture.asset(
                             fit: BoxFit.fill,
-                            "Images/Main In.svg",
+                            "assets/images/Main In.svg",
                           ),
                         )
                       ]),
@@ -153,7 +154,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                       alignment: Alignment.bottomCenter,
                       transform: Matrix4.rotationY(3),
                       child: SvgPicture.asset(
-                        "Images/Shape.svg",
+                        "assets/images/Shape.svg",
                         width: 30,
                         height: 30,
                         fit: BoxFit.contain,
@@ -161,7 +162,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                     ),
                   ),
                   Image.asset(
-                    "Images/User.png",
+                    "assets/images/User.png",
                     fit: BoxFit.fill,
                     width: 30,
                     height: 30,
@@ -181,7 +182,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (BuildContext context) {
-                          return const Shuru_Home_page();
+                          return  SpeakToText();
                         }));
                       },
                       child: const Row(

@@ -32,7 +32,7 @@ class _Contest_card_ViewState extends State<Contest_card_View> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
-                  "Images/chittoo.png",
+                  "assets/images/chittoo.png",
                   fit: BoxFit.contain,
                   width: 50,
                   height: 50,
@@ -67,7 +67,7 @@ class _Contest_card_ViewState extends State<Contest_card_View> {
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               child: Image.asset(
-                "Images/contest_image.png",
+                "assets/images/contest_image.png",
                 fit: BoxFit.cover,
                 width: MediaQuery
                     .of(context)
@@ -109,7 +109,7 @@ class _Contest_card_ViewState extends State<Contest_card_View> {
                     CircleAvatar(
                       radius: 10,
                       backgroundImage: AssetImage(
-                        "Images/User.png",
+                        "assets/images/User.png",
                       ),
                     ),
                     Positioned(
@@ -117,7 +117,7 @@ class _Contest_card_ViewState extends State<Contest_card_View> {
                       child: CircleAvatar(
                         radius: 10,
                         backgroundImage: AssetImage(
-                          "Images/User.png",
+                          "assets/images/User.png",
                         ),
                       ),
                     ),
@@ -126,7 +126,7 @@ class _Contest_card_ViewState extends State<Contest_card_View> {
                       child: CircleAvatar(
                         radius: 10,
                         backgroundImage: AssetImage(
-                          "Images/User.png",
+                          "assets/images/User.png",
                         ),
                       ),
                     ),

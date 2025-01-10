@@ -28,7 +28,7 @@ class _Coins_cardState extends State<Coins_card> {
           Row(
             children: [
               Image(
-                image: AssetImage("Images/conis.png"),
+                image: AssetImage("assets/images/conis.png"),
                 fit: BoxFit.fill,
                 width: 50,
                 height: 50,

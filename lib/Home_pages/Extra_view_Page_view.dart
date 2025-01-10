@@ -12,9 +12,9 @@ class Contest_PageView extends StatefulWidget {
 class _Contest_PageViewState extends State<Contest_PageView> {
   List<String> _names = ["WIN DAILY CASH", "WIN T-SHIRT", "DID YOU KNOW?"];
   List<String> _image_link = [
-    "Images/sponsored1.png",
-    "Images/sponsoredtshirt.png",
-    "Images/bannernew.png"
+    "assets/images/sponsored1.png",
+    "assets/images/sponsoredtshirt.png",
+    "assets/images/bannernew.png"
   ];
   List<String> _desp = [
     "Participate in daily English Contest and 3 winners "

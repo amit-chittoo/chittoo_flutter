@@ -60,7 +60,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                     Container(
                         margin: EdgeInsets.only(left: 20, top: 20),
                         child: const Image(
-                          image: AssetImage("Images/User.png"),
+                          image: AssetImage("assets/images/User.png"),
                           width: 50,
                         )),
 
@@ -114,7 +114,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                               Expanded(
                                   child: Image(
                                       image:
-                                          AssetImage("Images/pro crown.png")))
+                                          AssetImage("assets/images/pro crown.png")))
                             ],
                           )),
                     ),
@@ -148,7 +148,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                                   child: const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage(
-                                      "Images/notification.png",
+                                      "assets/images/notification.png",
                                     ),
                                     color: Colors.grey,
                                   ),
@@ -199,12 +199,12 @@ class _Home_pageviewState extends State<Home_pageview> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
-                              "Images/icons/stargorup.svg",
+                              "assets/images/icons/stargorup.svg",
                               width: 40,
                               height: 40,
                             ),
                             // Image(
-                            //   image: AssetImage("Images/mdi_fire.png"),
+                            //   image: AssetImage("assets/images/mdi_fire.png"),
                             //   width: 33,
                             // ),
                             const SizedBox(
@@ -234,7 +234,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
-                              "Images/icons/translate.svg",
+                              "assets/images/icons/translate.svg",
                               width: 40,
                               height: 40,
                             ),
@@ -272,7 +272,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
-                              "Images/icons/chatmot1.svg",
+                              "assets/images/icons/chatmot1.svg",
                               width: 40,
                               height: 40,
                             ),
@@ -303,7 +303,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
-                              "Images/icons/grammarbook.svg",
+                              "assets/images/icons/grammarbook.svg",
                               width: 40,
                               height: 40,
                             ),
@@ -507,7 +507,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                                         ),
                                         Image(
                                           image: AssetImage(
-                                              "Images/pro crown.png"),
+                                              "assets/images/pro crown.png"),
                                           width: 15,
                                         )
                                       ],
@@ -518,7 +518,7 @@ class _Home_pageviewState extends State<Home_pageview> {
                         ),
                         const Image(
                           width: 100,
-                          image: AssetImage("Images/Group.png"),
+                          image: AssetImage("assets/images/Group.png"),
                           fit: BoxFit.contain,
                         ),
                       ],

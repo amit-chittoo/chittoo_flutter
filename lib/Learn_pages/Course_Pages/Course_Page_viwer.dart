@@ -99,7 +99,7 @@ class _Course_ListPageState extends State<Course_ListPage> {
                 ),
               ),
               // Image(
-              //   image: AssetImage("Images/Mask Group.png"),
+              //   image: AssetImage("assets/images/Mask Group.png"),
               //   fit: BoxFit.fill,
               //   width: MediaQuery.of(context).size.width - 50,
               //   height: 160,

@@ -70,7 +70,7 @@ class _Ads_containerState extends State<Ads_container> {
             const Positioned(
                 top: 16,
                 child: Image(
-                  image: AssetImage("Images/illustration.png"),
+                  image: AssetImage("assets/images/illustration.png"),
                   fit: BoxFit.fill,
                   width: 120,
                   height: 130,

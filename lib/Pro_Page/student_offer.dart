@@ -82,7 +82,7 @@ class Student_offer extends StatelessWidget {
           top: 100,
           left: 70,
           child: Image(
-            image: AssetImage("Images/Rectangle 23847.png"),
+            image: AssetImage("assets/images/Rectangle 23847.png"),
             fit: BoxFit.fill,
             width: 40,
             height: 38,
