@@ -58,10 +58,6 @@ class _SpeakToTextState extends State<SpeakToText> {
     });
   }
 
-  /// Show the speech dialog and dynamically update the recognized words
-
-
-/// Show the speech dialog and dynamically update the recognized words
 void _showSpeechDialog(BuildContext context) {
   // Timer to detect silence
   Timer? _silenceTimer;
