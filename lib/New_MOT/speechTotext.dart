@@ -59,7 +59,7 @@ class _SpeakToTextState extends State<SpeakToText> {
   }
 
 void _showSpeechDialog(BuildContext context) {
-  // Timer to detect silence
+
   Timer? _silenceTimer;
 
   void _startSilenceTimer() {

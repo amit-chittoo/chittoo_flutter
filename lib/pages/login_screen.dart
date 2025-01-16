@@ -1,8 +1,11 @@
 import 'dart:developer';
+import 'dart:math';
 
+import 'package:chittoo/SignUpQuestionnaire/signUpQuestionnaire.dart';
 import 'package:chittoo/pages/home_screen.dart';
 import 'package:chittoo/pages/otp_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -46,9 +49,11 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     } catch (e) {
-      log("Google Sign-In Error: $e");
+      print("Google Sign-In Error: $e");
+      
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +171,7 @@ color: Colors.grey[200],
                             );
                           },
                           codeAutoRetrievalTimeout: (verificationId) {
-                            log("Auto Retrieval timeout");
+                            print("Auto Retrieval timeout");
                           },
                         );
                       },

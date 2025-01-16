@@ -1,5 +1,6 @@
 
 import 'package:chittoo/Profile_pages/Edit_Profile_pages/image_edit.dart';
+import 'package:chittoo/globals.dart';
 import 'package:flutter/material.dart';
 
 class Edit_Profile_Page extends StatefulWidget {
@@ -11,7 +12,7 @@ class Edit_Profile_Page extends StatefulWidget {
 
 class _Edit_Profile_PageState extends State<Edit_Profile_Page> {
   final TextEditingController _name_controller = TextEditingController();
-  final TextEditingController _email_controller = TextEditingController();
+   TextEditingController _email_controller = TextEditingController();
   final TextEditingController _mobile_controller = TextEditingController();
   final TextEditingController _date_of_birth_controller =
       TextEditingController();
@@ -20,6 +21,9 @@ class _Edit_Profile_PageState extends State<Edit_Profile_Page> {
   final TextEditingController _town_controller = TextEditingController();
 
   @override
+  void initState() {
+    _email_controller = TextEditingController(text: getUserEmailId);
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -86,6 +90,7 @@ class _Edit_Profile_PageState extends State<Edit_Profile_Page> {
               const SizedBox(
                 height: 10,
               ),
+             
               const Text(
                 "Email",
                 style: TextStyle(color: Colors.grey),

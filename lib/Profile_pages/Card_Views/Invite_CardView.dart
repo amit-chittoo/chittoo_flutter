@@ -52,7 +52,7 @@ class _Invite_CardViewState extends State<Invite_CardView> {
           ],
         ),
         const Image(
-          image: AssetImage("assets/images//Refer a friend-bro 1.png"),
+          image: AssetImage("assets/images/Referafriend-bro1.png"),
           fit: BoxFit.fill,
           width: 130,
         ),

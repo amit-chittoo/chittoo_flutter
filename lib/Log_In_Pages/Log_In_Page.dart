@@ -1,9 +1,16 @@
 import 'dart:developer';
+import 'dart:math';
 import 'package:chittoo/Games_Pages/Games_Main_page.dart';
 import 'package:chittoo/Profile_pages/Profile_Main_Page.dart';
+import 'package:chittoo/Screen/Intro_Page/Congraulations/Congraulations.dart';
+import 'package:chittoo/SignUpQuestionnaire/signUpQuestionnaire.dart';
+import 'package:chittoo/globals.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../Home_pages/Home_page.dart';
 
 class Log_In extends StatefulWidget {
@@ -19,7 +26,15 @@ class _Log_InState extends State<Log_In> {
   // final TextEditingController _namecontroller = TextEditingController();
   final TextEditingController _phonenumbercontorller = TextEditingController();
   String _error_text = "";
-
+  @override
+  void initState() {
+    setState(() {
+      isFromGetStarted=false;
+    });
+    super.initState();
+    
+  
+  }
   @override
   Widget build(BuildContext context) {
     Size _page_size = MediaQuery.of(context).size;
@@ -270,15 +285,15 @@ class _Log_InState extends State<Log_In> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Next",
+                              "Create Profile",
                               style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontFamily: "Euclid Circular",
                                   fontWeight: FontWeight.w600),
                             ),
                             Icon(
                               Icons.navigate_next,
-                              size: 40,
+                              size: 35,
                             )
                           ],
                         )),
@@ -291,12 +306,13 @@ class _Log_InState extends State<Log_In> {
       ),
     );
   }
+  
 }
 
-Future<void> signInWithGoogle(context) async {
+Future<void> signInWithGoogle(BuildContext context) async {
   try {
+    // Step 1: Google Sign-In
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
     if (googleUser == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Google sign-in canceled.")),
@@ -304,24 +320,135 @@ Future<void> signInWithGoogle(context) async {
       return;
     }
 
+    // Step 2: Authenticate with Firebase
     final GoogleSignInAuthentication googleAuth =
         await googleUser.authentication;
-
     final OAuthCredential credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
 
-    await FirebaseAuth.instance.signInWithCredential(credential);
+    final UserCredential userCredential =
+        await FirebaseAuth.instance.signInWithCredential(credential);
+    final User? user = userCredential.user;
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Google Sign-In Successful!")),
-    );
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const Home_page()),
-    );
+    if (user == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Google Sign-In Failed.")),
+      );
+      return;
+    }
+    final DatabaseReference userRef =
+        FirebaseDatabase.instance.ref().child('users').child(user.uid);
+
+    final DatabaseEvent event = await userRef.once();
+    if (event.snapshot.exists) {
+      await userRef.update({
+        'lastLogin': DateTime.now().toString(),
+      });
+      final Map<dynamic, dynamic> userData =
+          event.snapshot.value as Map<dynamic, dynamic>;
+
+      final String lastLoginString = userData['lastLogin'] ?? '';
+      final String userName = userData['name'] ?? '';
+
+   final String email = userData['email'] ?? '';
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setString('username', userName);
+      await prefs.setString('userId', user.uid);
+      await prefs.setString('user.email', email);
+      DateTime? lastLoginDate;
+      bool isSameCalendarDay(DateTime lastLogin, DateTime now) {
+        return lastLogin.year == now.year &&
+            lastLogin.month == now.month &&
+            lastLogin.day == now.day;
+      }
+
+      if (lastLoginString.isNotEmpty) {
+        lastLoginDate = DateTime.tryParse(lastLoginString);
+
+        if (lastLoginDate == null ||
+            !isSameCalendarDay(
+                lastLoginDate, DateTime.now())) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => CongraulationsPage(isFromSignUp: true)),
+          );
+        } else {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => Home_page()));
+        }
+      }
+    } else {
+      await userRef.set({
+        'name': "Username",
+        'email': user.email ?? 'No Email',
+        'createdAt': DateTime.now().toString(),
+        'lastLogin': DateTime.now().toString(),
+        'coins': 100,
+      });
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const SelectLanguage()),
+      );
+    }
   } catch (e) {
-    log("Google Sign-In Error: $e");
+    print("Google Sign-In Error: $e");
+   await guestlogin(context);
+  }
+
+}
+
+  
+Map<String, String> guestIdPassword() {
+  final random = Random();
+  final randomNumber = random.nextInt(100000); 
+  final email = "guestuser$randomNumber@chittoo.com";
+  final password = List.generate(10, (index) => String.fromCharCode(random.nextInt(26) + 97)).join();
+  return {"email": email, "password": password};
+}
+
+Future<void> guestlogin(BuildContext context) async {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  final DatabaseReference databaseRef = FirebaseDatabase.instance.ref().child('users');
+  Map<String, String> credentials = guestIdPassword();
+  String email = credentials["email"]!;
+  String password = credentials["password"]!;
+
+  try {
+    // Register the user
+    UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+
+    final User? user = userCredential.user;
+    if (user != null) {
+      // Save user data in Realtime Database
+      await databaseRef.child(user.uid).set({
+        'name': "Username", // Default name for guest users
+        'email': user.email ?? 'No Email',
+        'createdAt': DateTime.now().toString(),
+        'lastLogin': DateTime.now().toString(),
+        'coins': 100, // Default coins for new users
+        'password':password,
+      });
+
+      print("User registered and data saved successfully!"+user.email.toString());
+      print("User ID: ${user.uid}");
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>SelectLanguage()));
+    } else {
+      print("User creation failed: No user returned.");
+    }
+  } catch (e) {
+    // Handle email already in use error by retrying with a new email
+    if (e is FirebaseAuthException && e.code == "email-already-in-use") {
+      print("Email already in use, generating a new email...");
+      await guestlogin(context);
+    } else {
+      print("Error: $e");
+    }
   }
 }

@@ -1,5 +1,6 @@
-import 'package:chittoo/Intro_Page/Intro_page_layout.dart';
+import 'package:chittoo/Screen/Intro_Page/Intro_page_layout.dart';
 import 'package:chittoo/pages/login_screen.dart';
+import 'package:chittoo/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart'; 
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: Intro_page_layout());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false, home: SplashScreen());
   }
 }

@@ -54,8 +54,8 @@ class _Topic_card_containerState extends State<Topic_card_container> {
                       width: MediaQuery.of(context).size.width,
                       child: Image.network(
                         // width: MediaQuery.of(context).size.width,
-                        fit: BoxFit.contain,
-                        'https://firebasestorage.googleapis.com/v0/b/chittoo-f17e7.appspot.com/o/Course_Upload%2F52n4kuwmkln?alt=media&token=ff6247ef-6b84-424f-bff5-4cbe3599fc4e',
+                        fit: BoxFit.fill,
+                        'https://firebasestorage.googleapis.com/v0/b/chittoo-f17e7.appspot.com/o/Course_Upload%2F2ehgf5vanj2?alt=media&token=b1ce91e5-ffb1-4ca7-9d79-0e7fac9074c0',
                         loadingBuilder: (BuildContext context, Widget child,
                             ImageChunkEvent? loadingProgress) {
                           if (loadingProgress == null) return child;

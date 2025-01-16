@@ -15,7 +15,7 @@ class _MOT1_CardViewState extends State<MOT1_CardView> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color(0xFFFFEDDA),
+      color: const Color(0xFFEDDA),
       elevation: 3,
       child: Container(
           padding:

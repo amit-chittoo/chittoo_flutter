@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../Log_In_Pages/Log_In_Page.dart';
+import '../../Log_In_Pages/Log_In_Page.dart';
 
 class Intro_page_layout extends StatefulWidget {
   const Intro_page_layout({super.key});

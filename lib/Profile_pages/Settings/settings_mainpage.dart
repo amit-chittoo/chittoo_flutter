@@ -1,6 +1,8 @@
 
 import 'package:chittoo/GoogleSignIn.dart';
+import 'package:chittoo/Log_In_Pages/Log_In_Page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings_MainPage extends StatefulWidget {
   const Settings_MainPage({super.key});
@@ -11,7 +13,7 @@ class Settings_MainPage extends StatefulWidget {
 
 class _Settings_MainPageState extends State<Settings_MainPage> {
   bool _swtich = false;
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -286,6 +288,8 @@ class _Settings_MainPageState extends State<Settings_MainPage> {
                     // final provider =
                     //     Provider.of<Googlesignin>(context, listen: false);
                     // provider.signout(context);
+                    logout();
+
                   },
                   child: Row(
                     children: [
@@ -312,4 +316,14 @@ class _Settings_MainPageState extends State<Settings_MainPage> {
       ),
     );
   }
+   logout() async {
+    final SharedPreferences sf = await SharedPreferences.getInstance();
+    sf.clear();
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => Log_In()),
+       (route) => false,
+    );
+  }
+
 }

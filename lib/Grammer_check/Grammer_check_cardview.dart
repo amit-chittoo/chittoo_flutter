@@ -9,6 +9,7 @@ class Grammar_check_cardview extends StatefulWidget {
 }
 
 class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
+  bool isBtnClicked = false;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -43,7 +44,7 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
                   ),
                 ],
               ),
-              Image.asset("assets/images/icons/grammar_icon.png"),
+              Image.asset("assets/images/grammarIcon.png"),
             ],
           ),
           SizedBox(
@@ -81,20 +82,20 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Visibility(
-                      child: SvgPicture.asset(
-                        "assets/images/icons/speaker.svg",
+                      child: Image.asset(
+                        "assets/images/speaker.png",
                         width: 20,
                         height: 20,
                       ),
                       visible: false,
                     ),
-                    SvgPicture.asset(
-                      "assets/images/icons/copy_clip.svg",
+                    Image.asset(
+                      "assets/images/copy_clip.png",
                       width: 20,
                       height: 20,
                     ),
-                    SvgPicture.asset(
-                      "assets/images/icons/delete_bin.svg",
+                    Image.asset(
+                      "assets/images/delete_bin.png",
                       width: 20,
                       height: 20,
                     ),
@@ -105,88 +106,49 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
           ),
 
           const SizedBox(height: 20.0),
+          if (isBtnClicked == true) _showDialobox(),
 
           // corrected box
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 60,
+
+          //     const SizedBox(height: 30.0),
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isBtnClicked = true;
+                });
+
+                print("isBtnClicked" + isBtnClicked.toString());
+              },
+              child: FittedBox(
                 child: Card(
-                  color: const Color(0xFFA9A0BF),
+                  color: const Color(0xFFF67952),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Container(
-                      child: _buildCorrectedSentencesCard(),
-                      constraints: const BoxConstraints(
-                        minHeight: 150, // Set the minimum height to 100 pixels
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 10),
-                height: 150,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SvgPicture.asset(
-                      "assets/images/icons/speaker.svg",
-                      width: 20,
-                      height: 20,
-                    ),
-                    SvgPicture.asset(
-                      "assets/images/icons/copy_clip.svg",
-                      width: 20,
-                      height: 20,
-                    ),
-                    SvgPicture.asset(
-                      "assets/images/icons/delete_bin.svg",
-                      width: 20,
-                      height: 20,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 30.0),
-          Center(
-            child: FittedBox(
-              child: Card(
-                color: const Color(0xFFF67952),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SizedBox(width: 10.0),
-                      const Text(
-                        "Check 2",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14.0,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10.0),
+                        const Text(
+                          "Check 2",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.0,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 10.0),
-                      Image.asset(
-                        'Images/conis.png',
-                        width: 30.0,
-                        height: 35.0,
-                      ),
-                      const SizedBox(width: 10.0),
-                    ],
+                        const SizedBox(width: 10.0),
+                        Image.asset(
+                          'assets/images/conis.png',
+                          width: 30.0,
+                          height: 35.0,
+                        ),
+                        const SizedBox(width: 10.0),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -242,6 +204,59 @@ class _Grammar_check_cardviewState extends State<Grammar_check_cardview> {
         color: Colors.black,
         fontSize: 12,
       ),
+    );
+  }
+
+  Widget _showDialobox() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width - 60,
+          child: Card(
+            color: const Color(0xFFA9A0BF),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: _buildCorrectedSentencesCard(),
+                constraints: const BoxConstraints(
+                  minHeight: 150, // Set the minimum height to 100 pixels
+                ),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 10),
+          height: 150,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(
+                "assets/images/speaker.png",
+                width: 20,
+                height: 20,
+              ),
+              Image.asset(
+                "assets/images/copy_clip.png",
+                width: 20,
+                height: 20,
+              ),
+              Image.asset(
+                "assets/images/delete_bin.png",
+                width: 20,
+                height: 20,
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
